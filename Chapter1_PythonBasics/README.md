@@ -92,7 +92,7 @@ type(34)
 int
 ```
 + Flotante
-    + Un número que tiene parte entera y parte decimal.
+    + Representa un número real con parte entera y parte decimal.
 ```python
 type(0.05)
 ```
@@ -126,3 +126,32 @@ Un mismo operador puede tener distinto comportamiento cuando trabaja para según
 Utilizando el operador ```+``` se pueden concatenar dos strings, haciendo posible construir mensajes personalizados.
 Sin embargo, no es posible 'sumar' strings con otros tipos, como enteros, booleanos, etc... Para ello deberás utilizar la función ```str()```, que convertirá el valor del atributo en string. Existen funciónes similares para los otros tipos, como ```int()```, ```float()``` y ```bool()```.
 
+## Python Lists
+Hemos visto tipos de datos, ¿pero que sucede cuando tienes multiples puntos de datos y quieres almacenarlos en una misma variable? (P.E: edad de todos los alumnos de la clase).
+
+Se podría crear una variable por cada uno de la clase, pero esto sería un inconveniente. Para ello existen las listas, y se pueden almacenar con los brackets, de la siguiente forma ```[a, b, c]```.
+
+La ventaja de las listas en Python son las siguentes:
++ Agrupas una colección de valores a un nombre
++ Pueden contener cualquier tipo, incluso otras listas
++ Pueden contener distintos tipos al mismo tiempo (no suele ser común)
+
+```python
+casa1 = ["David", 45, "Maria", 42, "Cristina", 27, "Roberto", 19]
+type(casa1)
+```
+```
+list
+```
+
+```python
+casa2 = [["David", 45],
+         ["Maria", 42],
+         ["Cristina", 27],
+         ["Roberto", 19]]
+```
+```
+list
+```
+
+Como hemos visto anteriormente, en Python cada tipo tiene funcionalidades específicas y distintos comportamientos específicos, y esto también sucede con las listas.

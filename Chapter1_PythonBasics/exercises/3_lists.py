@@ -21,14 +21,42 @@ s_bany = "baño"
 
 # Adapta la lista de 'areas' para que se intercale el nombre de la estancia con su correspondiente área. Puedes usar las
 # variables anteriores o escribirlas a mano, tú decides.
-areas = [f_entr, f_coci, "entrada", f_salo, f_dorm, "baño", f_bany]
+areas = ["entrada", None, None, f_coci, None, f_salo, None, f_dorm, "baño", None]
 
 # Imprime 'areas'
 
-# Información de 'casa' como una lista de listas. Complétala con el resto de estancias, dormitorio y baño.
+# Información de 'casa' como una lista de listas. Complétala con el resto de estancias, dormitorio y baño, en ese orden.
 casa = [["entrada", f_entr],
         ["cocina", f_coci],
         ["salón", f_salo]]
 
 # Imprime la 'casa' y su 'type()'
 
+# SUBSETTING LISTS
+# Imprime el segundo elemento de la lista 'area'. Deberá coincidir con 11.25
+print()
+
+# Imprime el último elemento (tail) de la lista 'area'. Deberá coincidir con 9.50
+print()
+
+# Imprime el área de la lista 'area' asociada al 'salón'. Deberá coincidir con 20
+print()
+
+# Subset
+# Utilizando una combinación de subselecciones crea una nueva variable, llamada 'cocina_dormitorio_area' que contenga la
+# suma del área de la 'cocina' y del 'dormitorio'.
+cocina_dormitorio_area = None
+print(cocina_dormitorio_area)
+
+# Slicing
+# Utiliza las técnicas para crear intervalos vistas para crear dos variables, 'planta_baja' y 'planta_alta' que
+# contengan los 6 primeros elementos y los 4 últimos, respectivamente.
+planta_baja = areas
+planta_alta = areas
+print(planta_baja)
+print(planta_alta)
+
+# Subsetting lista de listas
+# Como has podido ver las listas de Python pueden almacenar cualquier cosa, incluso listas. Ahora piensa (sin ejecutar
+# nada inicialmente) en cual puede ser el resultado de
+result = casa[-1][1]

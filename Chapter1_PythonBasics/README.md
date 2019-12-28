@@ -137,7 +137,7 @@ La ventaja de las listas en Python son las siguentes:
 + Pueden contener distintos tipos al mismo tiempo (no suele ser común)
 
 ```python
-casa1 = ["David", 45, "Maria", 42, "Cristina", 27, "Roberto", 19]
+casa1 = ["David", 45, "María", 42, "Cristina", 27, "Roberto", 19]
 type(casa1)
 ```
 ```
@@ -149,9 +149,68 @@ casa2 = [["David", 45],
          ["Maria", 42],
          ["Cristina", 27],
          ["Roberto", 19]]
+type(casa2)
 ```
 ```
 list
 ```
 
 Como hemos visto anteriormente, en Python cada tipo tiene funcionalidades específicas y distintos comportamientos específicos, y esto también sucede con las listas.
+
+## Subsetting Lists
+Python usa indices para acceder a los elementos de una lista. Si volvemos al ejemplo de ```casa1```, el primer elemento tiene el índoce ```0```, el siguiente tiene el ```1```, y así sucesivamente.
+
+Supón que queremos escoger la edad de María, que es el cuarto elemento, con lo que escogeríamos el índice ```3``` (conocido como 'zero index') de la siguiente forma:
+```python
+casa1 = ["David", 45, "María", 42, "Cristina", 27, "Roberto", 19]
+casa1[3]
+```
+```python
+42
+```
+
+En el caso que queramos escoger el elemento 7 "Roberto", habrá que espeficicar el índice ```6```
+```python
+casa1 = ["David", 45, "María", 42, "Cristina", 27, "Roberto", 19]
+casa1[6]
+```
+```python
+"Roberto"
+```
+O también es posible realizarlo mediante índices negativos. Esto es útil cuando quieres obtener elementos al final de tu lista.
+```python
+casa1 = ["David", 45, "María", 42, "Cristina", 27, "Roberto", 19]
+casa1[-1]
+```
+```python
+19
+```
+### Intervalos
+Es posible obtener una sublista especificando un intervalo de índices mediante el uso de la siguiente sintaxis ```[3:5]```. En el ejemplo anterior tendríamos:
+```python
+casa1 = ["David", 45, "María", 42, "Cristina", 27, "Roberto", 19]
+casa1[3:5]
+```
+```
+[42, "Cristina"]
+```
+Como podemos observar, empieza por el 4º elemento hasta el 5º. Esto quiere decir que el índice final, el 5, es excluido. En general la sintaxis es la siguiente ```[ start(inclusive) : end(exclusive) ]```
+
+Por otro lado, si vamos a hacer una subselección desde el índice 0 de la lista, es posible hacerlo mediante la siguiente sintaxis ```[:end]```, como podemos ver en el ejemplo.
+
+```python
+casa1 = ["David", 45, "María", 42, "Cristina", 27, "Roberto", 19]
+casa1[:4]
+```
+```
+["David", 45, "María", 42]
+```
+
+Se puede hacer también desde un índice hasta el último de la cola mediante ```[start:]```, como:
+```python
+casa1 = ["David", 45, "María", 42, "Cristina", 27, "Roberto", 19]
+casa1[5:]
+```
+```
+[27, "Roberto", 19]
+```

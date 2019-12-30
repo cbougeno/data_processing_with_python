@@ -214,3 +214,79 @@ casa1[5:]
 ```
 [27, "Roberto", 19]
 ```
+
+## List Manipulation
+Acciones que se pueden hacer con las listas.
++ Cambiar elementos de la lista
++ Añadir elementos a la lista
++ Eliminar elementos de la lista
+
+Todas estas manipulaciones son sencillas mediante Python. Volviendo con el ejercicio de las edades, imagina que Roberto ha cumplido un año y queremos modificarlo. Bastará con asociar el valor al índice que queramos actualizar:
+```python
+casa1 = ["David", 45, "María", 42, "Cristina", 27, "Roberto", 19]
+print(casa1)
+casa1[7] = 20
+print(casa1)
+```
+```
+["David", 45, "María", 42, "Cristina", 27, "Roberto", 19]
+["David", 45, "María", 42, "Cristina", 27, "Roberto", 20]
+```
+También es posible modificar varios elementos al mismo tiempo
+```
+casa1[0:2] = ["Raúl", 39]
+print(casa1)
+```
+```
+["David", 45, "María", 42, "Cristina", 27, "Roberto", 20]
+```
+Ahora queremos incluirnos en la lista. Para ello tendremos que utilizar el simbolo más ```+``` para concatenar la lista con una nueva con mi edad, de la siguiente forma:
+```
+casa1 + ["yo", 29]
+```
+```
+["David", 45, "María", 42, "Cristina", 27, "Roberto", 20, "yo", 29]
+```
+Pudiendo crear una nueva lista para almacenarlo:
+```
+casa1_ext = casa1 + ["yo", 29]
+```
+Eliminar de una lista también es sencillo, basta con usar la función ```del```
+```
+del casa1[2]
+print(casa1)
+```
+```
+["David", 45, 42, "Cristina", 27, "Roberto", 20]
+```
+A causa de haber eliminado un elemento de la lista, todos los sucesivos a este elemento han reducido su índice en uno. De modo que si volviesemos a ejecutar la misma línea se eliminaria el valor ```42``` de la lista.
+
+### Behind Scenes
+Comentar lo que sucede cuando modificamos listas. Cuando creamos una lista cualquiera ```x``` y creamos una copia de esta ```y```, si modificamos un elemento de la copia también se modifica en la original.
+```python
+x = ['a', 'b', 'c']
+y = x
+y[1] = 'z'
+print(x)
+print(y)
+```
+```
+['a', 'z', 'c']
+['a', 'z', 'c']
+```
+Esto es debido que cuando copias un elemento de una lista a otra mediante el simbolo igual ```=```, se copia la referencia de la lista no el valor actual. De modo que las dos variables apuntan a la misma direción de memoria del ordenador.
+Cuando modificas una lista, se modifica el valor de la dirección de memoria. Por eso ```x``` e ```y``` se modifican.
+
+Si lo que quieres es hacer una copia de los valores de una lista, lo puedes hacer de la siguiente forma
+```python
+x = ['a', 'b', 'c']
+y = list(x)
+y = x[:]
+y[1] = 'z'
+print(x)
+print(y)
+```
+```
+['a', 'b', 'c']
+['a', 'z', 'c']
+```

@@ -56,7 +56,47 @@ planta_alta = areas
 print(planta_baja)
 print(planta_alta)
 
-# Subsetting lista de listas
+# SUBSETTING LISTA DE LISTAS
 # Como has podido ver las listas de Python pueden almacenar cualquier cosa, incluso listas. Ahora piensa (sin ejecutar
-# nada inicialmente) en cual puede ser el resultado de
+# nada inicialmente) en cual puede ser el resultado de:
 result = casa[-1][1]
+
+# REEMPLAZAR ELEMENTOS DE UNA LISTA
+# Actualiza el valor del area del 'baño', de la variable 'areas', para que sea de '10.50' metros cuadrados en lugar de
+# '9.50'
+
+# Vamos a hace qué el 'salón' se convierta en un 'spa'. Modifica el valor en la variable 'areas'. Imprime el resultado
+# de 'areas'.
+
+print(areas)
+
+# EXTENDER DE UNA LISTA
+# Utiliza el operador + para añadir ['piscina', 25.0] al final de la lista de 'areas'. Almacénalo en una variable con el
+# nombre de 'areas_1' e imprime el resultado.
+areas_1 = None
+print(areas_1)
+# Ahora extiende 'areas_1' añadiendo un 'garaje' con el valor 15.45 y nómbralo como 'areas_2' e imprime el resultado.
+areas_2 = None
+print(areas_2)
+
+# ELIMINAR DE UNA LISTA
+# Queremos eliminar de la lista 'areas_2' la 'piscina' y el valor asociado a su área. Recuerda utilizar la función del()
+# e imprime el resultado.
+print(areas)
+
+# TRABAJO INTERNO DE LISTAS
+# En este ejercicio deberás modificar el segundo comando, que crea la variable 'areas_copy' como una variable que apunta
+# al mismo espacio de memoria que 'areas_only'. Edita el segundo comando para copiar únicamente los valores a otra
+# variable.
+
+# Lista de áreas
+areas_only = [11.25, 18.0, 20.0, 10.75, 9.50]
+
+# Crear 'areas_copy'
+areas_copy = areas_only
+
+# Modificar el índice 0 de 'areas_copy'
+areas_copy[0] = 5.0
+
+# Imprimir 'areas_only' y 'areas_copy'
+print(areas_only)

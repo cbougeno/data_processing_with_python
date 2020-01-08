@@ -290,3 +290,192 @@ print(y)
 ['a', 'b', 'c']
 ['a', 'z', 'c']
 ```
+
+# FUNCIONES
+Una función es una **parte de código reutilizable**, desarrollada para **solucionar una tarea particular**. Puedes crear una función para evitar tener que **escribir varias veces una parte del código**.
+En lo que llevamos de curso hemos utilizado algunas, como ```del``` o ```type```.
+
+## max
+Un ejemplo es la función ```max()```, una de las funciones build-in de Python. Si lo utilizamos con la lista de edades tenemos lo siguiente:
+```python
+edades = [45, 42, 27, 20]
+max(edades)
+```
+```
+45
+```
+El resultado es ```45```, el valor más alto de la lista. ```max()``` funciona como una caja negra. No sabemos cómo lo hace pero funciona, pero como actua ```max()``` no es importante. Lo importante es que te puede ayudar a crear tus propias líneas de código.
+
+Otra cosa importante es que puedes asignar el resultado de la función ```max()``` a una nueva variable:
+```
+mayor = max(edades)
+mayor
+```
+```
+45
+```
+
+## round
+```round()``` es una función que se utiliza para redondear valores a una precisión concreta. Tiene dos argumentos de entrada, el primero es el valor numeríco sobre el que se quiere redondear y el segundo será la precisión decimal con la que quieres redondear.
+
+Imaginad que quiero redondear mi altura a un solo decimal. Sería así:
+```python
+round(1.69, 1)
+```
+```
+1.7
+```
+Es posible llamar a la función ```round()``` sin especificar la parte decimal:
+```python
+round(1.79)
+```
+```
+2
+```
+Automáticamente busca cual es el valor Entero más cercano.
+
+## help
+Si quieres conocer más acerca de las funciones build-in de Python puedes llamar a la función ```help()```
+
+````python
+help(round)
+````
+
+## Funciones utilizadas
+Existen muchas funciones built-in en Python, y de ellas nosotros hemos estado utilizando algunas, como ```type()``` o ```print()```; incluso las que castean una tipo de dato a otro, como ```str()```, ```int()```, ```float()``` y ```bool()```.
+
+## Back 2 Basic
+Volviendo con los tipos de datos, las variables como ```str```, ```int``` o ```list``` son ```Object``` con los tipos mencionados anterriormente. Cada uno de estos tipos de datos contiene funciones llamadas ```metodos```, como
++ ```str```
+    + ```capitalize()```
+    + ```replace()```
++ ```int```
+    + ```bit_lenght()```
+    + ```conjugate()```
++ ```list```
+    + ```index()```
+    + ```count()```
+
+En Python, TODO es un ```Object``` y cada objeto tiene métodos específicos. Es posible que distintos Objects compartan métodos, como es el caso de ```index()``` que se encuentra tanto en ```str``` como en ```list```
+
+### list methods
+ Volviendo con el ejemplo de las edades, si utilizamos el método ```index()``` del elemento ```'Cristina'```, el resultlado será:
+ ```python
+casa1 = ["David", 45, "María", 42, "Cristina", 27, "Roberto", 19]
+casa1.index("Cristina")
+```
+```
+4
+```
+Dado que 4 es el índice del string ```"Cristina"```
+
+También se puede utilizar el método ```count()``` para contar el número de ocurrencias para un valor determinado en la lista.
+```python
+casa1 = ["David", 45, "María", 42, "Cristina", 27, "Roberto", 19]
+casa1.count(45)
+```
+```
+1
+```
+Y esto tiene sentido, dado que ```"David"``` es el único que tiene la edad de ```45```.
+
+### str methods
+Continuando con los ejemplos, ahora es el turno de strings:
+```python
+"cristina".capitalize()
+```
+```
+"Cristina"
+```
+El método ```capitalize()``` devuelve el string con la primera letra en mayusculas.
+
+Tambien es posible reemplazar caracteres por otros, como:
+```python
+"Cristina".replace("na", "an")
+```
+```
+"Cristian"
+```
+
+## Cambios en métodos
+Existen algunos métodos que no devuelven una respuesta, como es el caso de ```append()``` para las listas:
+```python
+casa1 = ["David", 45, "María", 42, "Cristina", 27, "Roberto", 19]
+casa1.append("Pepe")
+casa1
+```
+```
+["David", 45, "María", 42, "Cristina", 27, "Roberto", 19, "Pepe"]
+```
+```python
+casa1.append(35)
+casa1
+```
+```
+["David", 45, "María", 42, "Cristina", 27, "Roberto", 19, "Pepe", 35]
+```
+
+## Packages
+Ahora que conoces el funcionamiento de las funciones, puedes darte cuenta que es posible utilizar funciones creadas por terceros para tu propio beneficio.
+
+Es necesario que conozcas que todo el código escrito no tiene porque ir en un mismo script .py.
+Esto es debido que puede ser un inconveniente tener cantidades ingentes de lineas de código, ya que es posible que no utilices algunas líneas de código y puede ser un problema de mantener.
+
+Un ```package``` es el directorio o carpeta donde está alojado el script, y cada script recibe el nombre de módulo. Se pueden encontrar miles de packages opem source en internet. ```numpy```es un package para que los data scientist trabajen de forma eficiente con arrays y/o vectores numéricos, ```matlibplot``` es utilizado para visualización de datos y ```scikit-learn``` para machine learning.
+
+Estos packages no se encuentran por defecto en Python. Para poder instalarlo es necesario hacerlo con herramientas como ```pip``` o ```conda```.
+
+Ve a la URL http://pip.readthedocs.org/en/stable/installing y descarga ```get-pip.py``` y en el terminal escribe.
+
+```shell script
+python3 get-pip.py
+``` 
+
+Una vez instalado ```pip``` podrás instalar numpy de la siguiente forma:
+
+```shell script
+pip3 install numpy
+```
+
+### Import package
+Después de hacer la instalación, deberías ser capaz de importar el package o un módulo específico de dicho packete.
+
+Para importar un package entero en python puedes hacer lo siguiente:
+```python
+import numpy
+array([1, 2, 3])
+```
+```
+NameError: name 'array' is not defined.
+```
+
+Se ha producido el error ya que debemos especificar la función de la siguiente manera:
+```python
+import numpy
+numpy.array([1, 2, 3])
+```
+```
+array([1, 2, 3])
+```
+
+Aunque esta notación puede ser un tanto larga y tediosa. Es posible importar numpy con un alias:
+```python
+import numpy as np
+np.array([1, 2, 3])
+```
+```
+array([1, 2, 3])
+```
+
+Ahora supón que solamente queremos importar la función ```array()``` del package numpy, en lugar de todas las funciones:
+```python
+from numpy import array
+array([1, 2, 3])
+```
+```
+array([1, 2, 3])
+```
+
+Ahora sí que es posible llamar al método de esta forma, y no dará el error visto anteriormente.
+
+El problema de utilizar esta forma es que no queda del todo claro la función a qué método pertenece. 

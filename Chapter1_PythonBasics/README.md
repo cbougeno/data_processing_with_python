@@ -138,7 +138,7 @@ La ventaja de las listas en Python son las siguentes:
 
 ```python
 casa1 = ["David", 45, "María", 42, "Cristina", 27, "Roberto", 19]
-type(casa1)
+(type(casa1))
 ```
 ```
 list
@@ -149,7 +149,7 @@ casa2 = [["David", 45],
          ["Maria", 42],
          ["Cristina", 27],
          ["Roberto", 19]]
-type(casa2)
+print(type(casa2))
 ```
 ```
 list
@@ -163,7 +163,7 @@ Python usa indices para acceder a los elementos de una lista. Si volvemos al eje
 Supón que queremos escoger la edad de María, que es el cuarto elemento, con lo que escogeríamos el índice ```3``` (conocido como 'zero index') de la siguiente forma:
 ```python
 casa1 = ["David", 45, "María", 42, "Cristina", 27, "Roberto", 19]
-casa1[3]
+print(casa1[3])
 ```
 ```python
 42
@@ -172,7 +172,7 @@ casa1[3]
 En el caso que queramos escoger el elemento 7 "Roberto", habrá que espeficicar el índice ```6```
 ```python
 casa1 = ["David", 45, "María", 42, "Cristina", 27, "Roberto", 19]
-casa1[6]
+print(casa1[6])
 ```
 ```python
 "Roberto"
@@ -180,7 +180,7 @@ casa1[6]
 O también es posible realizarlo mediante índices negativos. Esto es útil cuando quieres obtener elementos al final de tu lista.
 ```python
 casa1 = ["David", 45, "María", 42, "Cristina", 27, "Roberto", 19]
-casa1[-1]
+print(casa1[-1])
 ```
 ```python
 19
@@ -189,7 +189,7 @@ casa1[-1]
 Es posible obtener una sublista especificando un intervalo de índices mediante el uso de la siguiente sintaxis ```[3:5]```. En el ejemplo anterior tendríamos:
 ```python
 casa1 = ["David", 45, "María", 42, "Cristina", 27, "Roberto", 19]
-casa1[3:5]
+print(casa1[3:5])
 ```
 ```
 [42, "Cristina"]
@@ -200,7 +200,7 @@ Por otro lado, si vamos a hacer una subselección desde el índice 0 de la lista
 
 ```python
 casa1 = ["David", 45, "María", 42, "Cristina", 27, "Roberto", 19]
-casa1[:4]
+print(casa1[:4])
 ```
 ```
 ["David", 45, "María", 42]
@@ -209,10 +209,10 @@ casa1[:4]
 Se puede hacer también desde un índice hasta el último de la cola mediante ```[start:]```, como:
 ```python
 casa1 = ["David", 45, "María", 42, "Cristina", 27, "Roberto", 19]
-casa1[5:]
+print(casa1[5:])
 ```
 ```
-[27, "Roberto", 19]
+[ 27, "Roberto", 19 ]
 ```
 
 ## List Manipulation
@@ -229,8 +229,8 @@ casa1[7] = 20
 print(casa1)
 ```
 ```
-["David", 45, "María", 42, "Cristina", 27, "Roberto", 19]
-["David", 45, "María", 42, "Cristina", 27, "Roberto", 20]
+[ "David", 45, "María", 42, "Cristina", 27, "Roberto", 19 ]
+[ "David", 45, "María", 42, "Cristina", 27, "Roberto", 20 ]
 ```
 También es posible modificar varios elementos al mismo tiempo
 ```
@@ -238,14 +238,14 @@ casa1[0:2] = ["Raúl", 39]
 print(casa1)
 ```
 ```
-["David", 45, "María", 42, "Cristina", 27, "Roberto", 20]
+[ "David", 45, "María", 42, "Cristina", 27, "Roberto", 20 ]
 ```
 Ahora queremos incluirnos en la lista. Para ello tendremos que utilizar el simbolo más ```+``` para concatenar la lista con una nueva con mi edad, de la siguiente forma:
 ```
 casa1 + ["yo", 29]
 ```
 ```
-["David", 45, "María", 42, "Cristina", 27, "Roberto", 20, "yo", 29]
+[ "David", 45, "María", 42, "Cristina", 27, "Roberto", 20, "yo", 29 ]
 ```
 Pudiendo crear una nueva lista para almacenarlo:
 ```
@@ -257,7 +257,7 @@ del casa1[2]
 print(casa1)
 ```
 ```
-["David", 45, 42, "Cristina", 27, "Roberto", 20]
+[ "David", 45, 42, "Cristina", 27, "Roberto", 20 ]
 ```
 A causa de haber eliminado un elemento de la lista, todos los sucesivos a este elemento han reducido su índice en uno. De modo que si volviesemos a ejecutar la misma línea se eliminaria el valor ```42``` de la lista.
 
@@ -271,8 +271,8 @@ print(x)
 print(y)
 ```
 ```
-['a', 'z', 'c']
-['a', 'z', 'c']
+[ 'a', 'z', 'c' ]
+[ 'a', 'z', 'c' ]
 ```
 Esto es debido que cuando copias un elemento de una lista a otra mediante el simbolo igual ```=```, se copia la referencia de la lista no el valor actual. De modo que las dos variables apuntan a la misma direción de memoria del ordenador.
 Cuando modificas una lista, se modifica el valor de la dirección de memoria. Por eso ```x``` e ```y``` se modifican.
@@ -287,8 +287,8 @@ print(x)
 print(y)
 ```
 ```
-['a', 'b', 'c']
-['a', 'z', 'c']
+[ 'a', 'b', 'c' ]
+[ 'a', 'z', 'c' ]
 ```
 
 # FUNCIONES
@@ -299,7 +299,7 @@ En lo que llevamos de curso hemos utilizado algunas, como ```del``` o ```type```
 Un ejemplo es la función ```max()```, una de las funciones build-in de Python. Si lo utilizamos con la lista de edades tenemos lo siguiente:
 ```python
 edades = [45, 42, 27, 20]
-max(edades)
+print(max(edades))
 ```
 ```
 45
@@ -320,14 +320,14 @@ mayor
 
 Imaginad que quiero redondear mi altura a un solo decimal. Sería así:
 ```python
-round(1.69, 1)
+print(round(1.69, 1))
 ```
 ```
 1.7
 ```
 Es posible llamar a la función ```round()``` sin especificar la parte decimal:
 ```python
-round(1.79)
+print(round(1.79))
 ```
 ```
 2
@@ -362,7 +362,7 @@ En Python, TODO es un ```Object``` y cada objeto tiene métodos específicos. Es
  Volviendo con el ejemplo de las edades, si utilizamos el método ```index()``` del elemento ```'Cristina'```, el resultlado será:
  ```python
 casa1 = ["David", 45, "María", 42, "Cristina", 27, "Roberto", 19]
-casa1.index("Cristina")
+print(casa1.index("Cristina"))
 ```
 ```
 4
@@ -372,7 +372,7 @@ Dado que 4 es el índice del string ```"Cristina"```
 También se puede utilizar el método ```count()``` para contar el número de ocurrencias para un valor determinado en la lista.
 ```python
 casa1 = ["David", 45, "María", 42, "Cristina", 27, "Roberto", 19]
-casa1.count(45)
+print(casa1.count(45))
 ```
 ```
 1
@@ -400,19 +400,19 @@ Tambien es posible reemplazar caracteres por otros, como:
 ## Cambios en métodos
 Existen algunos métodos que no devuelven una respuesta, como es el caso de ```append()``` para las listas:
 ```python
-casa1 = ["David", 45, "María", 42, "Cristina", 27, "Roberto", 19]
+casa1 = [ "David", 45, "María", 42, "Cristina", 27, "Roberto", 19 ]
 casa1.append("Pepe")
-casa1
+print(casa1)
 ```
 ```
-["David", 45, "María", 42, "Cristina", 27, "Roberto", 19, "Pepe"]
+[ "David", 45, "María", 42, "Cristina", 27, "Roberto", 19, "Pepe" ]
 ```
 ```python
 casa1.append(35)
-casa1
+print(casa1)
 ```
 ```
-["David", 45, "María", 42, "Cristina", 27, "Roberto", 19, "Pepe", 35]
+[ "David", 45, "María", 42, "Cristina", 27, "Roberto", 19, "Pepe", 35 ]
 ```
 
 ## Packages
@@ -443,7 +443,7 @@ Después de hacer la instalación, deberías ser capaz de importar el package o 
 Para importar un package entero en python puedes hacer lo siguiente:
 ```python
 import numpy
-array([1, 2, 3])
+array([ 1, 2, 3 ])
 ```
 ```
 NameError: name 'array' is not defined.
@@ -455,27 +455,209 @@ import numpy
 numpy.array([1, 2, 3])
 ```
 ```
-array([1, 2, 3])
+array([ 1, 2, 3 ])
 ```
 
 Aunque esta notación puede ser un tanto larga y tediosa. Es posible importar numpy con un alias:
 ```python
 import numpy as np
-np.array([1, 2, 3])
+np.array([ 1, 2, 3 ])
 ```
 ```
-array([1, 2, 3])
+array([ 1, 2, 3 ])
 ```
 
 Ahora supón que solamente queremos importar la función ```array()``` del package numpy, en lugar de todas las funciones:
 ```python
 from numpy import array
-array([1, 2, 3])
+array([ 1, 2, 3 ])
 ```
 ```
-array([1, 2, 3])
+array([ 1, 2, 3 ])
 ```
 
 Ahora sí que es posible llamar al método de esta forma, y no dará el error visto anteriormente.
 
-El problema de utilizar esta forma es que no queda del todo claro la función a qué método pertenece. 
+El problema de utilizar esta forma es que no queda del todo claro la función a qué método pertenece.
+
+## Numpy
+Es un package que permite a los desarrolladores trabajar con vectores numéricos. Permite realizar operaciones matemáticas sobre colecciones, con buen rendimiento.
+
+Supón que tenemos el siguiente listado de alturas, donde cada índice está asociado al índice de otra lista con los pesos:
+```python
+heights = [1.73, 1.68, 1.71, 1.89, 1.79]
+weights = [65.4, 59.2, 63.6, 88.4, 68.7]
+```
+Si ahora intentamos calcular el IMC, obtendremos el siguiente error:
+```python
+weights / heights ** 2
+```
+```
+TypeError: unsupported operand type(s) for **: 'list' and 'int'
+```
+La mejor manera de solucionar esto sería utilizando Numpy. Numpy proporciona una solución a las listas comunes, los ```array```. Estas son similares a las listas, pero con características añadidas: puedes realizar operaciones entre arrays
+
+Ahora es posible asociar las listas anteriores a arrays de la siguiente forma:
+```python
+import numpy as np
+
+np_heights = np.array(heights)
+np_weights = np.array(weights)
+```
+Una vez transformadas las listas en arrays ya es posible calcular el IMC:
+```python
+imc = np_weights / np_heights ** 2
+print(imc)
+```
+```
+array([ 21.852, 20.975, 21.75, 24.747, 21.441 ])
+```
+Con esto se consigue que se realicen las operaciones elemento a elemento.
+
+### Características
++ Las arrays de Numpy solamente aceptan un único tipo, ya sea enteros, decimales, boleanos, o cualquiera. Si se trata de crear una array con diferentes tipos de datos, estos se transformarán a strings ```str```.
++ Comportamientos diferentes:
+```python
+import numpy as np
+python_list = [ 1, 2, 3 ]
+np_array = np.array([ 1, 2, 3 ])
+
+print(python_list + python_list)
+print(np_array + np_array)
+```
+```
+[ 1, 2, 3, 1, 2, 3 ]
+[ 2, 4, 6 ]
+```
+
+### Numpy Subseting
+Volviendo con los valores del IMC vamos a explicar esto.
+
+Para seleccionar un elemento hay que acceder mediante corchetes y el valor del índice que necesitemos vía zero-index.
+
+Por otro lado, es posible escoger valores mayores y/o menores a cierto valor, por medio de ```<, <=, >, >=```. Esto devolverá una array de booleans.
+
+Si lo que queremos es obtener solamente los valores numéricos, basta con introducir esta array de booleans sobre corchetes. A continuación un ejemplo:
+
+```python
+import numpy as np
+imc = np.array([ 21.852, 20.975, 21.75, 24.747, 21.441 ])
+
+print(imc[1])
+
+print(imc < 23)
+
+print(imc[imc < 23])
+```
+```
+20.975
+array([ False, False, False, True, False ])
+array([24.747])
+```
+
+### Numpy Type
+Si obtenemos el ```type()``` de una array obtenemos:
+```python
+import numpy as np
+np_heights = np.array([ 1.73, 1.68, 1.71, 1.89, 1.79 ])
+np_weights = np.array([ 65.4, 59.2, 63.6, 88.4, 68.7 ])
+
+print(type(np_heights))
+print(type(np_weights))
+```
+```
+numpy.ndarray
+numpy.ndarray
+```
+Diciendonos que se trana de una array de n-dimensiones. Esta array específicamente es de una sola dimensión, pero es posible crear arrays de 2, 3 o 7. Vamos a trabajar ahora con 2 dimensiones.
+
+### 2D Numpy Arrays
+Creamos una array de 2-dimensiones con las alturas y pesos:
+```python
+import numpy as np
+np_2d = np.array([[ 1.73, 1.68, 1.71, 1.89, 1.79 ],
+                  [ 65.4, 59.2, 63.6, 88.4, 68.7 ]])
+print(np_2d)
+```
+```
+array([[ 1.73, 1.68, 1.71, 1.89, 1.79 ],
+       [ 65.4, 59.2, 63.6, 88.4, 68.7 ]]
+```
+Obtenemos un par de sublistas dentro de un array. Cada sublista corresponde con una columna en la array de 2-dimensiones.
+
+Ahora vamos a hablar del atributo ```shape()``` del objeto array. ```shape()``` nos aporta información acerca de la estructura de datos de la array, e indica el número de dimensiones (o filas) y columnas que tiene la array:
+```python
+print(np_2d.shape)
+```
+```
+(2, 5)
+```
+Donde el primer valor corresponde al número de filas y el segundo al número de columnas (de ahora en adelante **row** y **columns**), para una array de 2-dimensiones. En este caso tenemos 2 filas y 5 columnas.
+
+Los índices ahora quedan de la siguiente manera:
+```
+             #0      #1      #2      #3      #4
+array([[    1.73,   1.68,   1.71,   1.89,   1.79    ],      #0
+       [    65.4,   59.2,   63.6,   88.4,   68.7    ]]      #1
+
+```
+Para seleccionar una *row* basta con usar corchetes:
+```python
+print(np_2d[0])
+```
+```
+array([ 1.73, 1.68, 1.71, 1.89, 1.79 ])
+```
+Y si queremos obtener el tercer elemento de la primera row haremos así:
+```python
+print(np_2d[0][2])
+```
+```
+1.71
+```
+Básicamente es como seleccionar la *row* y de esta hacer otra selección. Sin embargo se puede simplificar a:
+
+```python
+print(np_2d[0, 2])
+```
+```
+1.71
+```
+Obteniendo el mismo resultado pero de una manera más intuitiva.
+
+Supón ahora que queremos obtener el segundo y tercer elemento de cada *row*, lo haríamos con la siguiente sintaxis:
+```python
+print(np_2d[:, 1:3])
+```
+```
+array([[ 1.68, 1.71 ],
+       [ 59.2, 63.6 ]])
+```
+Los primeros dos puntos quiere decir que escoja todas las *rows*, y la sintaxis de las *columns* es lo que ya vimos en las listas. Recuerda que el primer valor es inclusivo y el último exclusivo.
+
+De forma parecida puedes escoger unicamente los elementos de la segunda *row*:
+```python
+print(np_2d[1, :])
+```
+```
+array([ 65.4,   59.2,   63.6,   88.4,   68.7 ]
+```
+## Generar Datos
+Vamos a utilizar una función de numpy, llamada ```np.random.normal()```. Con ello generaremos datos para nuestro ejemplo de baseball.
+
+```python
+import pandas as np
+height = np.round(np.random.normal(1.75, 0.20, 5000), 2)
+weight = np.round(np.random.normal(60.32, 15, 5000), 2)
+``` 
+
+## Basic Statistics
+Numpy es comunmente utilizada para tareas relacionadas con estadistica. Es por ello que el package contiene funciones, tales como:
++ ```mean()```
+    + Promedio de sumar todos los valores del conjunto y dividirlo entre el número de valores.
++ ```median()```
+    + Valor medio cuando el conjunto de datos es ordenado de mayor a menor.
++ ```std()```
+    + Se utiliza para cuantificar la dispersión del conjunto de datos
++ ```corrcoef()```
+    + Indica cómo de correlacionadas están dos variables entre si.

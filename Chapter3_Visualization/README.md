@@ -8,7 +8,9 @@ La visualización de datos se utiliza continuamente para explorar los datasets p
 Existen multitud de packages encaminados a realizar visualización de datos en Python, y uno de los más populares es ```Matplotlib```.
 
 ## Matplotlib
-Para visualizar hay que llamar a un subpackage llamado ```pyplot```, como se indica a continuación:
+Con ```matplotlib``` se pueden crear multitud de visualiaciones. La más común es la representación mediante líneas.
+ 
+Para visualizar hay que llamar a un subpackage llamado ```pyplot```.
 
 Vamos a crear un par de listas que contendrán las poblaciones mundiales a lo largo de los años y lo visualizaremos mediante la función ```plot()```.
 
@@ -34,7 +36,7 @@ import matplotlib.pyplot as plt
 year = [1950, 1979, 1990, 2010]
 pop = [2.519, 3.692, 5.263, 6.972]
 plt.scatter(year, pop)
-#         x    y
+#            x    y
 plt.show()
 ```
 

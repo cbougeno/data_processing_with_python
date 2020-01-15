@@ -63,7 +63,7 @@ Python está perfectamente diseñada para realizar operaciones básicas, tales c
 Cuando queramos almacenar valores utilizamos las *variables*. Las características de una variable en Python son:
 + específica: no es posible invocar una misma variable con dos valores *case-sensitive*
 + posibilidad de llamar al valor de una variable a posteriori
-![Imagen](https://github.com/cbougeno/data_processing_with_python/Chapter1_PythonBasics/resources/images/im_variables.png)
+![Imagen](https://github.com/cbougeno/data_processing_with_python/blob/master/Chapter1_PythonBasics/resources/images/im_variables.png)
 
 De tal modo que si una variable es modificada es el código contunuaría funcionando, siempre y cuando el cambio sea por el mismo tipo.
 

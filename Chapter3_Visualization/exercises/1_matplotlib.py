@@ -38,3 +38,15 @@ life_exp = [43.828, 76.423, 72.301, 42.731, 75.32, 81.235, 79.829, 75.635, 64.06
 
 # * Esta representación no tiene mucho sentido.
 # ----------------------------------------------------------------------------------------------------------------------
+# SCATTER plot
+# Cuando tienes la variable tiempo en el eje x, la representación mediante líneas es tu amiga. Pero en otros casos,
+# cuando tratas de averiguar la correlación entre dos variables 'scatter' es una mejor opción.
+
+# Cambia la representación por línea a 'scatter
+plt.plot(gdp_cap, life_exp)
+
+# La correlación se visualiza de mejor manera si utilizamos la renta per cápita 'gdp_cap' en escala logarítmica. Utiliza
+# la función 'xscale' del subpackage 'pyplot' e indica como argumento 'log'.
+
+
+# Muestra la gráfica mediante la función 'show()'

@@ -21,6 +21,14 @@ Los ficheros con el nombre **\_\_init\_\_.py** se utilizan para marcar en disco 
 Chapter1_PythonBasics/exercises/__init__.py
 Chapter1_PythonBasics/exercises/1_introduction.py
 ````
+
+```
+mydir/
+      module1.py
+      module2.py
+      __init.py__
+```
+
 **mydir** se trata del paquete que contiene el proyecto, por lo que es posible importar el código de *module.py* así:
 ```python
 import Chapter1_PythonBasics.exercises
@@ -33,7 +41,7 @@ from Chapter1_PythonBasics import exercises
 ### Importar paquetes
 ```import``` es el comando que se utiliza en Python para importar paquetes de tu propio proyecto o de dependencias externas.
 
-Puesdes importar todo un paquete, con lo que deberás repetir el nombre del paquete para poder utilizar una función
+Puedes importar todo un paquete, con lo que deberás repetir el nombre del paquete para poder utilizar una función
 ```python
 import os
 os.getcwd()
@@ -63,7 +71,8 @@ Python está perfectamente diseñada para realizar operaciones básicas, tales c
 Cuando queramos almacenar valores utilizamos las *variables*. Las características de una variable en Python son:
 + específica: no es posible invocar una misma variable con dos valores *case-sensitive*
 + posibilidad de llamar al valor de una variable a posteriori
-![Imagen](https://github.com/cbougeno/data_processing_with_python/Chapter1_PythonBasics/resources/images/im_variables.png)
+
+![Imagen](https://github.com/cbougeno/data_processing_with_python/blob/master/Chapter1_PythonBasics/resources/images/im_variables.png)
 
 De tal modo que si una variable es modificada es el código contunuaría funcionando, siempre y cuando el cambio sea por el mismo tipo.
 
@@ -333,6 +342,8 @@ print(round(1.79))
 2
 ```
 Automáticamente busca cual es el valor Entero más cercano.
+
+![Imagen](https://github.com/cbougeno/data_processing_with_python/blob/master/Chapter1_PythonBasics/resources/images/im_help_round_ndigits.png)
 
 ## help
 Si quieres conocer más acerca de las funciones build-in de Python puedes llamar a la función ```help()```

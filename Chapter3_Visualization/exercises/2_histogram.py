@@ -10,5 +10,20 @@ life_exp = [43.828, 76.423, 72.301, 42.731, 75.32, 81.235, 79.829, 75.635, 64.06
 
 
 # ----------------------------------------------------------------------------------------------------------------------
+# En el ejercicio anterior no especificaste el número de 'bins' y se ajustó por defecto a 10. Ahora vamos a
+# subdimensionar y sobredimensionar los conjuntos.
 
+# Construye el histograma con 5 'bins'
+
+
+# Muestra y reinicia la gráfica
+plt.show()
+plt.clf()
+
+# Construye el histograma con 20 'bins'
+
+
+# Muestra y reinicia la gráfica
+plt.show()
+plt.clf()
 

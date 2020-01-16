@@ -123,4 +123,8 @@ plt.show()
 
 ![Imagen](https://github.com/cbougeno/data_processing_with_python/blob/master/Chapter3_Visualization/resources/images/im_histogram.png)
 
+El número de conjuntos es importante ya que si se establecen pocos puede no mostrar suficientes detalles, mientras que si se excede puede complicarlo.
+
+Cuando realizas varias gráficas, puedes llamar a la función ```plt.clf()``` para reiniciar las características de la gráfica
+
 ***Ejercicios 2_histogram.py***

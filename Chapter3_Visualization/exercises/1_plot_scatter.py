@@ -19,8 +19,8 @@ pop = [2.53, 2.57, 2.62, 2.67, 2.71, 2.76, 2.81, 2.86, 2.92, 2.97, 3.03, 3.08, 3
 # Muestra la gráfica mediante la función 'show()'
 
 
-# * Según el gráfico, ¿aproximadamente cuándo la población tendrá alrededor de 10 millones de habitantes?, visualizando de
-# esta manera es facil dar el dato, por lo menos más que si tuvieras que buscar entre todos los valores de las listas
+# * Según el gráfico, ¿aproximadamente cuándo la población tendrá alrededor de 10 millones de habitantes?, visualizando
+# de esta manera es facil dar el dato, por lo menos más que si tuvieras que buscar entre todos los valores de las listas
 # (imagina que tuviesemos millones de datos).
 # ----------------------------------------------------------------------------------------------------------------------
 

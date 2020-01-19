@@ -128,3 +128,119 @@ El número de conjuntos es importante ya que si se establecen pocos puede no mos
 Cuando realizas varias gráficas, puedes llamar a la función ```plt.clf()``` para reiniciar las características de la gráfica
 
 ***Ejercicios 2_histogram.py***
+
+## Personalizar visualizaciones
+Crear un gráfico es una cosa. Hay que dar con el gráfico correcto, que haga que el mensaje sea claro a primera vista, ese es el reto.
+
+Hay multiples formas, existen distintos tipos de gráficos (como hemos visto), y por cada uno de ellos existe un número infinito de personalizaciones, como el poder cambiar colores, forma, etiquetas.
+
+La elección depende de los datos y de lo que se desee.
+
+Volviendo al ejercicio de las poblaciones, si solo lo hacemos como hasta ahora el resultado queda un poco pobre:
+
+```python
+import matplotlib.pyplot as plt
+years = [1950, 1951, 1952, ... , 2100]
+pop = [2.53, 2.57, 2.62, ... , 10.85]
+
+plt.plot(years, pop)
+
+plt.show()
+```
+
+![Imagen](https://github.com/cbougeno/data_processing_with_python/blob/master/Chapter3_Visualization/resources/images/im_years_pop_1.png)
+
+Siendo claros, no se sabe que datos se están mostrando, especialmente para aquellos que lo ven por primera vez. Para solucionar esto debemos **etiquetar** el gráfico, añadiendo el nombre de los ejes ```x``` e ```y```. Esto lo consequimos de la siguiente manera:
+
+```python
+import matplotlib.pyplot as plt
+years = [1950, 1951, 1952, ... , 2100]
+pop = [2.53, 2.57, 2.62, ... , 10.85]
+
+plt.plot(years, pop)
+
+plt.xlaber('Año')
+plt.ylaber('Población')
+
+plt.show()
+```
+
+![Imagen](https://github.com/cbougeno/data_processing_with_python/blob/master/Chapter3_Visualization/resources/images/im_years_pop_2.png)
+
+De esta forma queda mucho más claro que nos indica cada eje. 
+
+A continuación vamos a indicar el título de la gráfica. 
+
+```python
+import matplotlib.pyplot as plt
+years = [1950, 1951, 1952, ... , 2100]
+pop = [2.53, 2.57, 2.62, ... , 10.85]
+
+plt.plot(years, pop)
+
+plt.xlabel('Año')
+plt.ylabel('Población')
+plt.title('Proyecciones de Población Muncial')
+
+plt.show()
+```
+
+![Imagen](https://github.com/cbougeno/data_processing_with_python/blob/master/Chapter3_Visualization/resources/images/im_years_pop_3.png)
+
+Lo siguiente es dar perspectiva a la gráfica, para ello vamos a hacer que el eje y comience por 0 y que crezca en intervalos de 2 hasta el valor 10. Esto podemos hacerlo con la función ```yticks```:
+
+```python
+import matplotlib.pyplot as plt
+years = [1950, 1951, 1952, ... , 2100]
+pop = [2.53, 2.57, 2.62, ... , 10.85]
+
+plt.plot(years, pop)
+
+plt.xlabel('Año')
+plt.ylabel('Población')
+plt.title('Proyecciones de Población Mundial')
+plt.yticks([0, 2, 4, 6, 8, 10])
+plt.show()
+```
+
+![Imagen](https://github.com/cbougeno/data_processing_with_python/blob/master/Chapter3_Visualization/resources/images/im_years_pop_3.png)
+
+Y ahora podemos añadir otro argumento para darle el valor que deseemos a los marcadores, poniendo los valores en *miles de millón*:
+
+```python
+import matplotlib.pyplot as plt
+years = [1950, 1951, 1952, ... , 2100]
+pop = [2.53, 2.57, 2.62, ... , 10.85]
+
+plt.plot(years, pop)
+
+plt.xlabel('Año')
+plt.ylabel('Población')
+plt.title('Proyecciones de Población Mundial')
+plt.yticks([0, 2, 4, 6, 8, 10], ['0', '2MM', '4MM', '6MM', '8MM', '10MM'])
+plt.show()
+```
+
+![Imagen](https://github.com/cbougeno/data_processing_with_python/blob/master/Chapter3_Visualization/resources/images/im_years_pop_4.png)
+
+Para finalizar, vamos a añadir más datos que añadan valor de los últimos años. En wikipedia se ha extraido la información de los años 1800, 1850 y 1900, así que vamos a añadirlos:
+
+```python
+import matplotlib.pyplot as plt
+years = [1950, 1951, 1952, ... , 2100]
+pop = [2.53, 2.57, 2.62, ... , 10.85]
+
+# Añadimos datos anteriores
+years = [1800, 1850, 1900] + years 
+pop = [1.0, 1.262, 1.650] + pop
+
+plt.plot(years, pop)
+
+plt.xlabel('Año')
+plt.ylabel('Población')
+plt.title('Proyecciones de Población Mundial')
+plt.yticks([0, 2, 4, 6, 8, 10], ['0', '2MM', '4MM', '6MM', '8MM', '10MM'])
+plt.show()
+```
+
+![Imagen](https://github.com/cbougeno/data_processing_with_python/blob/master/Chapter3_Visualization/resources/images/im_years_pop_5.png)

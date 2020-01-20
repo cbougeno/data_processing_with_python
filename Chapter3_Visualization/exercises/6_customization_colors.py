@@ -14,12 +14,38 @@ col = ['red', 'green', 'blue', 'blue', 'yellow', 'black', 'green', 'red', 'red',
 # transparente y 1 es opaco):
 plt.scatter(x=rpc, y=life_exp, s=np.array(pop) * 2)
 
-# Previous customizations
+# Personalización previa
 plt.xscale('log')
 plt.xlabel('Renta per Capita [en dólares]')
 plt.ylabel('Esperanza de vida [en años]')
 plt.title('Desarrollo Mundial en 2007')
 plt.xticks([1000, 10000, 100000], ['1k', '10k', '100k'])
 
-# Show the plot
+# Muestra la grafica
 plt.show()
+
+# ----------------------------------------------------------------------------------------------------------------------
+# Ahora vamos a añadir texto al gráfico, para identificar las posiciones de 'India' y 'Asia'. Se van a establecer estos
+# strings en posiciones estáticas del gráfico.
+
+# Copia la función anterior 'plt.scatter()' y la configuración previa
+
+
+
+
+
+
+
+
+# Personalización adicional
+plt.text(1550, 71, 'India')
+plt.text(5700, 80, 'China')
+
+# Añade la función 'plt.grid()' y establece el argumento de entrada a 'True'
+
+# Muestra la grafica
+plt.show()
+
+# * Podemos decir de este gráfico que tiene una correlación positiva entre las variables 'rpc' y 'life_exp', que la
+# representación en color azul corresponde a Africa, puesto que tiene baja 'rpc' y 'life_exp', y que China tene mayor
+# 'rpc' y 'life_exp' que India.

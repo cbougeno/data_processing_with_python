@@ -662,8 +662,8 @@ height = np.round(np.random.normal(1.75, 0.20, 5000), 2)
 weight = np.round(np.random.normal(60.32, 15, 5000), 2)
 ``` 
 
-## Basic Statistics
-Numpy es comunmente utilizada para tareas relacionadas con estadistica. Es por ello que el package contiene funciones, tales como:
+## Estadistica Básica
+Numpy es comunmente utilizada para tareas relacionadas con estadística. Es por ello que el package contiene funciones, tales como:
 + ```mean()```
     + Promedio de sumar todos los valores del conjunto y dividirlo entre el número de valores.
 + ```median()```
@@ -672,3 +672,55 @@ Numpy es comunmente utilizada para tareas relacionadas con estadistica. Es por e
     + Se utiliza para cuantificar la dispersión del conjunto de datos
 + ```corrcoef()```
     + Indica cómo de correlacionadas están dos variables entre si.
+
+----
+# Python Intermedio
+Parte en la que avanzaremos en más contenido ya visto, como nuevos tipos de datos, entre otras cosas.
+
+## Diccionarios
+Los diccionarios son colecciones de datos no ordenados, modificables e indexados. Se escriben mediante llaves ```{}``` y contienen claves (keys) y valores (values).
+
+Imagina, como ya hemos visto en otros ejercicios, que tienes un par de listas. Una destinada a la población, que contiene valores numéricos de población mundial, y otra lista de países, asociadas entre ellas por los índices de sendas listas.
+
+```python
+pop = [30.5, 2.77, 39.21]
+countries = ['afganistán', 'albania', 'algeria']
+```
+
+Pretendes obtener la población de Algeria, por lo que deberás identificarla mediante la función ```index()```, y una vez tienes este índice buscar en la lista ```pop```.
+```python
+ind_alg = countries.index('algeria')
+ind_alg
+```
+```
+2
+```
+```python
+pop[ind_alg]
+```
+```
+39.21
+```
+
+Como se puede ver, es posible realizar esto con listas, pero se trata de un verdadero dolor de cabeza. No es algo para lo que esté pensado el uso de listas.
+
+La solución a esto es el uso de diccionarios. La **key** del diccionario que vamos a crear serán los países, mientras que los **values** serán las poblaciones de dichos países:
+```python
+world = {'afganistán': 30.5, 'albania': 2.77, 'algeria': 39.21}
+```
+
+Es practicamente igual a un objero JSON. Ahora podemos obtener un valor utilizando los corchetes con un valor de un país como **key**
+```python
+world['afganistan']
+```
+```
+30.5
+```
+
+La sintaxis será la siguiente:
+```
+dict_name[key]
+result: value
+```
+
+Nota adicional, los diccionarios no son solamente fáciles a la hora de trabajar, sino muy eficientes ya que Python realiza la búsqueda de las **keys** de forma muy rápida, incluso en diccionarios enormes. 

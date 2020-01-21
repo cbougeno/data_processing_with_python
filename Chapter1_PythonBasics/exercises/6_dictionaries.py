@@ -12,3 +12,10 @@ capitals = ['madrid', 'parís', 'berlín', 'oslo']
 # Utiliza 'ind_ale' para obtener la capital de Alemania de 'countries' e imprime el resultado
 
 
+# Ahora añade como keys los 'countries' y como values las 'capitals', respetando el mismo orden. En total deben estar
+# los cuatro pares key-value
+europe = {'españa': 'madrid'}
+
+# Imprime 'europe'
+
+

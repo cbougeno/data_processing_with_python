@@ -37,7 +37,20 @@ europe = {'españa': 'madrid'}
 # Asegura que 'italia' pertenece al diccionario de 'europe' (el resultado tiene que ser de tipo 'bool')
 
 
-# Añade ahora 'polonia' como clave y como valor 'varsovia'
+# Añade ahora 'alemania' como clave y como valor 'bonn'
+
+
+# Imprime 'europe'
+
+
+# Anteriormente hemos introducido un valor incorrecto para el país 'alemania'. Actualiza su valor y establece 'berlín'
+
+
+# Ahora imagina que hemos introducido un valor imposible como que 'viena' se encuentra en 'australia', dado que nos
+# hemos confundido con Austria
+europe['australia'] = 'viena'
+
+# Elimina 'australia' de 'europe'
 
 
 # Imprime 'europe'

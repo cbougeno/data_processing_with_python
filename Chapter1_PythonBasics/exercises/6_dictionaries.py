@@ -28,3 +28,17 @@ europe = {'españa': 'madrid'}
 
 # Imprime la salida de utilizar la key 'noruega' en el diccionario 'europe
 
+
+# MANIPULACIÓN DE DICCIONARIOS
+# Ahora que conoces cómo se accede o actualiza un diccionario, vamos a ponerlo en práctica. Añade el valor 'roma' a la
+# clave 'italia' a la variable 'europe'
+
+
+# Asegura que 'italia' pertenece al diccionario de 'europe' (el resultado tiene que ser de tipo 'bool')
+
+
+# Añade ahora 'polonia' como clave y como valor 'varsovia'
+
+
+# Imprime 'europe'
+

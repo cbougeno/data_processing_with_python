@@ -723,4 +723,62 @@ dict_name[key]
 result: value
 ```
 
-Nota adicional, los diccionarios no son solamente fáciles a la hora de trabajar, sino muy eficientes ya que Python realiza la búsqueda de las **keys** de forma muy rápida, incluso en diccionarios enormes. 
+Es importante saber que las ```keys``` serán únicas, y si tratas de almacenar un valor en una clave existente únicamente se almacenará el último valor añadido. Se puede decir que se actualiza el valor en la ```key``` de la siguiente forma:
+
+```python
+world['algeria'] = 39.31
+world
+```
+```
+{'afganistán': 30.5, 'albania': 2.77, 'algeria': 39.21}
+```
+
+Asimismo, las ```claves``` son objetos inmutables, no pudiendo modificar su valor en ningún caso, y estas pueden ser de tipos:
++ Strings
++ Integers
++ Booleans
+```python
+{0: "hola", True: "querido", "dos": "mundo"}
+``` 
+
+Nota adicional, los diccionarios no son solamente fáciles a la hora de trabajar, sino muy eficientes ya que Python realiza la búsqueda de las **keys** de forma muy rápida, incluso en diccionarios enormes.
+
+Se puede validar si un diccionario contiene una ```key``` de la siguiente forma:
+
+```python
+'afganistan' in world
+```
+```
+True
+```
+
+O incluso borrarlo (se va a añadir un nuevo registro):
+````python
+world['sealand'] = 0.000027
+world
+````
+```
+{'afganistán': 30.5, 'albania': 2.77, 'algeria': 39.21, 'sealand': 0.000027}
+```
+```python
+del(world['sealand'])
+world
+```
+```
+{'afganistán': 30.5, 'albania': 2.77, 'algeria': 39.21}
+```
+Al volver a imprimir el resultado vemos que ```sealand``` se ha borrado del diccionario.
+
+### Listas vs Diccionarios
+Como hemos visto, los dos objetos son muy similares. Entre ellas:
++ Ambos objetos pueden ser seleccionados, actualizados y borrados con corchetes ```[]```.
+
+Entre las diferencias, tenemos que:
++ **listas** indexan por un rango numérico
++ **diccionarios** lo hacen por clave, siendo esta de tipo inmutable.
+
+Entonces, ¿cuándo utilizarlas?:
++ **listas** cuando el orden de la coleccion de valores importa
++ **diccionarios** cuando tienes que hacer consultas rápidas por claves únicas
+
+***Ejercicios 6_diccionarios.py***

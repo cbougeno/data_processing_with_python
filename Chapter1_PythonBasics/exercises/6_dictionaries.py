@@ -55,3 +55,26 @@ europe['australia'] = 'viena'
 
 # Imprime 'europe'
 
+
+# DICCIONARIOS ANIDADOS
+# ¿Recuerdas que las listas podían contener listas? pues con los diccionarios sucede lo mismo. Para ello vamos a
+# utilizar una versión de Europa que contenga la capital y la población.
+# Dictionary of dictionaries
+europe_v2 = {'españa': {'capital': 'madrid', 'poblacion': 46.77},
+          'francia': {'capital': 'parís', 'poblacion': 66.03},
+          'alemania': {'capital': 'berlín', 'poblacion': 80.62},
+          'noruega': {'capital': 'oslo', 'poblacion': 5.084}}
+
+# Utiliza los corchetes de forma anidada para obtener la capital de Francia sobre 'europe_v2'. Imprime el resultado.
+
+
+# Crea un diccionario con el nombre de 'data', con las claves 'capital' y 'poblacion' y establece los valores 'roma' y
+# '59.83', respectivamente.
+
+
+# Añade 'data' a 'europe_v2' con la clave 'italia'
+
+
+# Imprime 'europe_v2'
+
+

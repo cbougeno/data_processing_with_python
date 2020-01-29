@@ -22,3 +22,18 @@ cpc = [809, 731, 588, 18, 200, 70, 45]
 # Imprime 'cars'
 
 
+# Definición de las etiquetas de los países
+row_labels = ['US', 'AUS', 'JPN', 'IN', 'RU', 'MOR', 'EG']
+
+# Especifica las etiquetas de las filas estableciendo al atributo 'index' del DataFrame 'cars' la lista 'row_labels'
+
+
+# Imprime 'cars'
+
+
+# LEER DE CSV
+# Utiliza la función 'read_csv' para importar el archivo 'cars.csv' a un DataFrame. Almacenalo en 'cars_v2'. Se
+# encuentra en la ruta 'Chapter1_PythonBasic/resources'
+
+# Imprime 'cars_v2'. ¿Está correctamente?
+

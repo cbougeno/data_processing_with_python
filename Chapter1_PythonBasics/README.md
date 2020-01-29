@@ -782,3 +782,79 @@ Entonces, ¿cuándo utilizarlas?:
 + **diccionarios** cuando tienes que hacer consultas rápidas por claves únicas
 
 ***Ejercicios 6_diccionarios.py***
+
+## Pandas
+Como científico de datos se trabaja con grandes cantidades de datos. La forma de estos puede ser muy diferente, pero la podemos llevar a una estructura tabular.
+
+Cuando trabajamos con tablas los datos los obtenermos por filas o ```rows```. Cada fila es una observación, y por cada observación tenemos diferentes columnas ````columns```` o variables.
+
+![Imagen](https://github.com/cbougeno/data_processing_with_python/blob/master/Chapter1_PythonBasics/resources/images/im_tabular_table.png)
+
+Para ello la librería más comunmente utilizada ens ```Pandas```. Se trata de una herramienta de alto nivel para la manipulación y el procesamiento de datos, construida con Numpy
+
+![Imagen](https://github.com/cbougeno/data_processing_with_python/blob/master/Chapter1_PythonBasics/resources/images/im_tabular_table_python.png)
+
+A parte de variables y observaciones, estas últimas tienen también lo que se conoce como etiquetas.
+
+### Como construir una tabla con Pandas
+Para construir uno mismo una tabla podemos utilizar los diccionarios.
+````python
+dict = {
+    "country": ["Brasil", "Rusia", "India", "China", "Sudafrica"],
+    "capital": ["Brasilia", "Moscú", "Nueva Delhi", "Beijing", "Pretoria"],
+    "area": [8.516, 17.10, 3.286, 9.597, 1.221],
+    "population": [200.4, 143.5, 1252, 1357, 52.98]
+}
+````
+
+Las claves serán las columnas mientras que los valores se convierten en los datos, columans por columnas.
+
+A continuación hay que importar el package de la siguiente y convertir el diccionario a un ```DataFrame``:
+
+```python
+import pandas as pd
+df = pd.DataFrame(dict)
+```
+
+Si visualizamos estos datos, vemos que los índices se autoenumeran desde 0 en adelante. Podemos modificar el atributo ```index```:
+
+```python
+df.index["BR", "RU", "IN", "CH", "SU"]
+```
+
+
+Ahora imagina que tenemos los datos en un fichero externo, como un csv. Podemos leer directamente los datos desde ficheros, tablas en DDBB y muchos otros inputs.
+
+```text
+,country,capita,area,population
+BR,Brasil,Brasilia,8.516,200.4
+RU,Rusia,Moscú,17.10,143.5
+IN,India,Nueva Delhi,3.286,1252
+CH,China,Beijing,9.597,1357
+SU,Sudafrica,Pretoria,1.221,52.98
+```
+Vamos a tratar de importar estos datos en Python utilizando la función ```read_csv()``` de Pandas.
+
+```python
+df = pd.read_csv('path/to/bricks.csv')
+```
+```
+  Unnamed: 0    country       capita    area  population
+0         BR     Brasil     Brasilia   8.516      200.40
+1         RU      Rusia        Moscú  17.100      143.50
+2         IN      India  Nueva Delhi   3.286     1252.00
+3         CH      China      Beijing   9.597     1357.00
+4         SU  Sudafrica     Pretoria   1.221       52.98
+```
+
+Lo primero es obtener los datos del csv que se encuentran en un directorio. Vemos que no ha procesado bien la primera columna de los índices. Para ello realizamos la lectura estableciendo el parámetro ````index_col````:
+```
+      country       capita    area  population
+BR     Brasil     Brasilia   8.516      200.40
+RU      Rusia        Moscú  17.100      143.50
+IN      India  Nueva Delhi   3.286     1252.00
+CH      China      Beijing   9.597     1357.00
+SU  Sudafrica     Pretoria   1.221       52.98
+```
+
+***Ejercicios 7_pandas***

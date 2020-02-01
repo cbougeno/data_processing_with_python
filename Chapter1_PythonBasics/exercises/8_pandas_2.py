@@ -38,3 +38,14 @@ cars = pd.read_csv('./Chapter1_PythonBasics/resources/cars.csv', index_col=0)
 # Imprime un sub-DataFrame, que contenga las observaciones de 'Rusia' y 'Marruecos' y las columnas 'country' y
 # 'drives_right' con 'loc' o 'iloc'
 
+
+# Ahora vamos a seleccionar solamente columnas con 'loc' e 'iloc'.
+
+# Imprime la columna 'drives_right' como Series con 'loc' o 'iloc'
+
+
+# Imprime la columna 'drives_right' como DataFrame con 'loc' o 'iloc'
+
+
+# Imprime las columnas 'cars_per_cap' y 'drives_right' como DataFrame con 'loc' o 'iloc'
+

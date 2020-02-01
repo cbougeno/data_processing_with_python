@@ -32,5 +32,9 @@ cars = pd.read_csv('./Chapter1_PythonBasics/resources/cars.csv', index_col=0)
 # Usa 'loc' e 'iloc (en dos líneas) para seleccionar las observaciones de Australia y Egipto. Imprime la salida como
 # DataFrame
 
+# Imprime el valor de la columna 'drives_right' para la observación de 'Marruecos' con 'loc' o 'iloc'.
 
+
+# Imprime un sub-DataFrame, que contenga las observaciones de 'Rusia' y 'Marruecos' y las columnas 'country' y
+# 'drives_right' con 'loc' o 'iloc'
 

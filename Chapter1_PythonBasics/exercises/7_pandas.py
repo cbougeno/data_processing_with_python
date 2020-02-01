@@ -33,7 +33,7 @@ row_labels = ['US', 'AUS', 'JPN', 'IN', 'RU', 'MOR', 'EG']
 
 # LEER DE CSV
 # Utiliza la función 'read_csv' para importar el archivo 'cars.csv' a un DataFrame. Almacenalo en 'cars_v2'. Se
-# encuentra en la ruta 'Chapter1_PythonBasic/resources'
+# encuentra en la ruta './Chapter1_PythonBasic/resources/'
 
 
 # Imprime 'cars_v2'. ¿Está correctamente?

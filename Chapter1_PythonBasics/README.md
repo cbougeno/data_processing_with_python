@@ -826,7 +826,7 @@ df.index["BR", "RU", "IN", "CH", "SU"]
 Ahora imagina que tenemos los datos en un fichero externo, como un csv. Podemos leer directamente los datos desde ficheros, tablas en DDBB y muchos otros inputs.
 
 ```text
-,country,capita,area,population
+,country,capital,area,population
 BR,Brasil,Brasilia,8.516,200.4
 RU,Rusia,Moscú,17.10,143.5
 IN,India,Nueva Delhi,3.286,1252
@@ -839,7 +839,7 @@ Vamos a tratar de importar estos datos en Python utilizando la función ```read_
 df = pd.read_csv('path/to/bricks.csv')
 ```
 ```
-  Unnamed: 0    country       capita    area  population
+  Unnamed: 0    country      capital    area  population
 0         BR     Brasil     Brasilia   8.516      200.40
 1         RU      Rusia        Moscú  17.100      143.50
 2         IN      India  Nueva Delhi   3.286     1252.00
@@ -849,7 +849,7 @@ df = pd.read_csv('path/to/bricks.csv')
 
 Lo primero es obtener los datos del csv que se encuentran en un directorio. Vemos que no ha procesado bien la primera columna de los índices. Para ello realizamos la lectura estableciendo el parámetro ````index_col````:
 ```
-      country       capita    area  population
+      country      capital    area  population
 BR     Brasil     Brasilia   8.516      200.40
 RU      Rusia        Moscú  17.100      143.50
 IN      India  Nueva Delhi   3.286     1252.00
@@ -857,4 +857,186 @@ CH      China      Beijing   9.597     1357.00
 SU  Sudafrica     Pretoria   1.221       52.98
 ```
 
-***Ejercicios 7_pandas***
+***Ejercicios 7_pandas.py***
+
+## Índices y selección de datos
+
+Existen muchas maneras de indexar y seleccionar datosde un DataFrame. La primera es mediante corchetes ```[]```, la siguiente es por medio de acceso de datos a partir de los métodos ```loc``` y ```iloc```, que hacen que Pandas sea realmente útil.
+
+### Acceso a columnas
+Imagina que quieres acceder solamente a la primera columna del conjunto de datos de coches, ```country```. Simplemente puedes hacerlo escribiendo a la derecha del DataFrame el nombre de la columna mediante **corchetes**, como se muestra a continuación:
+
+```python
+df['country']
+```
+```
+BR       Brasil
+RU        Rusia
+IN        India
+CH        China
+SU    Sudafrica
+Name: country, dtype: object
+```
+
+Vemos que el resultado son los valores para dicha columna, enlazados con las correspondientes etiquetas. Destaca también la última línea, que informa del tipo de datos y el nombre de la columna. 
+
+Al hacer esto la salida deja de ser un DataFrame, y se conoce como ```Serie```:
+
+````python
+print(type(df['country']))
+````
+```
+<class 'pandas.core.series.Series'>
+```
+
+La Serie consiste en una array de 1-dimensión, que puede ser etiquetada como el DataFrame. Un conjunto de series forma un DataFrame.
+
+Si haces una seleccion sobre el DataFrame con dobles corchetes obtienes un DataFrame:
+
+```python
+df[['country']]
+```
+```
+      country
+BR     Brasil
+RU      Rusia
+IN      India
+CH      China
+SU  Sudafrica
+```
+Si comprobamos ahora el tipo, veremos que se trata de un DataFrame con una sola columna.
+```python
+print(type(df[['country']]))
+```
+```
+<class 'pandas.core.frame.DataFrame'>
+```
+
+De una forma parecida se pueden extraer dos columnas:
+```python
+df[['country', 'capital']]
+```
+```
+      country      capital
+BR     Brasil     Brasilia
+RU      Rusia        Moscú
+IN      India  Nueva Delhi
+CH      China      Beijing
+SU  Sudafrica     Pretoria
+```
+Siendo claros, lo que estamos haciendo aquí es acceder con una lista de cabeceras. Podemos acceder también con una variable lista:
+```python
+headers = ['country', 'capital']
+df[headers]
+```
+```
+      country      capital
+BR     Brasil     Brasilia
+RU      Rusia        Moscú
+IN      India  Nueva Delhi
+CH      China      Beijing
+SU  Sudafrica     Pretoria
+```
+
+### Acceso a filas
+La única forma de acceder a las rows es mediante ```slice``` ```[a:b]```. Para el caso que vamos a poner vamos a acceder a los índices del 1 al 3, basándonos en **zero.index** (recuerda que el primer valor es inclusivo y el último es exclusivo):
+````python
+df[1:4]
+````
+```
+   country      capital    area  population
+RU   Rusia        Moscú  17.100       143.5
+IN   India  Nueva Delhi   3.286      1252.0
+CH   China      Beijing   9.597      1357.0
+```
+
+#### Notas
++ Los corchetes funcionan, pero de forma limitada.
++ Idealmente buscamos algo parecido a las numpy arrays de 2-dimensiones -> ```slice```
++ En Pandas se usa ```loc``` ```label-based``` e ```iloc``` ```integer-position-based```
+
+#### loc
+```loc``` es un método de DataFrame en el que tienes que indicar el índice. El resultado es una Serie que contiene toda la información de la row.
+```python
+df.loc['RU']
+```
+```
+country       Rusia
+capital       Moscú
+area           17.1
+population    143.5
+Name: RU, dtype: object
+```
+Del mismo modo que antes, si quieres obtener el DataFrame debes hacerlo con doble corchete:
+```python
+df.loc[['RU']]
+```
+```
+   country capital  area  population
+RU   Rusia   Moscú  17.1       143.5
+```
+La visualización cambia en fundios de si utilizas DataFrame o Series.
+
+De esta forma puedes seleccionar varias rows mediante las etiquetas:
+```python
+df.loc[['RU', 'IN', 'CH']]
+```
+```
+   country      capital    area  population
+RU   Rusia        Moscú  17.100       143.5
+IN   India  Nueva Delhi   3.286      1252.0
+CH   China      Beijing   9.597      1357.0
+```
+
+Hasta ahora solo hemos escogido o filas o columnas. Podemos hacer una selección combinando ambas:
+```python
+df.loc[['RU', 'IN', 'CH'], ['country', 'capital']]
+```
+```
+   country      capital
+RU   Rusia        Moscú
+IN   India  Nueva Delhi
+CH   China      Beijing
+```
+
+Puedes utilizar ```loc``` para devolver todas las rows (utilizando dobles puntos) y algunas columnas:
+
+```python
+df.loc[:, ['country', 'capital']]
+```
+```
+      country      capital
+BR     Brasil     Brasilia
+RU      Rusia        Moscú
+IN      India  Nueva Delhi
+CH      China      Beijing
+SU  Sudafrica     Pretoria
+```
+
+#### iloc
+Esta forma de acceder por índice es mediante su valor númerico por orden. De forma que podemos acceder al primer row tanto con ````loc```` como con ```iloc```
+```python
+df.loc[['RU']]
+```
+```
+   country capital  area  population
+RU   Rusia   Moscú  17.1       143.5
+```
+```python
+df.iloc[[1]]
+```
+```
+   country capital  area  population
+RU   Rusia   Moscú  17.1       143.5
+```
+Para equiparar la seleccion de filas y columnas de antes podemos hacerla por valores enteros de la siguiente forma:
+```python
+df.iloc[[1,2,3], [0,1]]
+```
+```
+   country      capital
+RU   Rusia        Moscú
+IN   India  Nueva Delhi
+CH   China      Beijing
+```
+***Ejercicios 8_pandas_2.py***

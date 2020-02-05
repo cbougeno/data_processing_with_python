@@ -12,6 +12,8 @@ __pycache__/
 # C extensions
 *.so
 
+*solutions.ipynb
+
 # Distribution / packaging
 .Python
 build/
